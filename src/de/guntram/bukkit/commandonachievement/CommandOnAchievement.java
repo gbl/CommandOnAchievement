@@ -5,6 +5,7 @@
  */
 package de.guntram.bukkit.commandonachievement;
 
+import java.io.File;
 import java.util.List;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Achievement;
@@ -23,6 +24,8 @@ public class CommandOnAchievement extends JavaPlugin implements Listener {
 
     static boolean havePlaceholders=false;
     final String playerPlaceholder="%player_name%";
+    File configFile;
+    long lastConfigReadTime;
 
     @Override
     public void onEnable() {
@@ -31,6 +34,8 @@ public class CommandOnAchievement extends JavaPlugin implements Listener {
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             havePlaceholders=true;
         }
+        configFile=new File(getDataFolder(), "config.yml");
+        lastConfigReadTime=configFile.lastModified();
     }
 
     @Override
@@ -41,6 +46,11 @@ public class CommandOnAchievement extends JavaPlugin implements Listener {
     public void onPlayerAchievement(PlayerAchievementAwardedEvent e) {
         Player player=e.getPlayer();
         Achievement achievement=e.getAchievement();
+        long lastMod;
+        if ((lastMod=configFile.lastModified())!=lastConfigReadTime) {
+            this.reloadConfig();
+            lastConfigReadTime=lastMod;
+        }
         List<String> entries=this.getConfig().getStringList(achievement.toString().toLowerCase());
         for (String s:entries) {
             s=org.bukkit.ChatColor.translateAlternateColorCodes('&', s);

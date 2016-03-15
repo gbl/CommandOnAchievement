@@ -2,11 +2,11 @@
 
 open_inventory:
   - You have opened your inventory.
-  - Now, %player_name%, mine some wood!
+  - Now, %player_name%, fell a tree!
   - /give %player_name% iron_axe 1
 mine_wood:
-  - You call this mining??
-  - Build a workbench!
+  - Well done.
+  - Next, build a workbench!
 build_workbench:
 build_pickaxe:
 build_furnace:
