@@ -1,2 +1,5 @@
-## YAML Template.
----
+name: CommandOnAchievement
+main: de.guntram.bukkit.commandonachievement.CommandOnAchievement
+version: 0.1
+description: Run a command when a player gets an achievement
+softdepend: [PlaceholderAPI]

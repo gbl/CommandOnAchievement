@@ -1,2 +1,41 @@
 ## YAML Template.
----
+
+open_inventory:
+  - You have opened your inventory.
+  - Now, %player_name%, mine some wood!
+  - /give %player_name% iron_axe 1
+mine_wood:
+  - You call this mining??
+  - Build a workbench!
+build_workbench:
+build_pickaxe:
+build_furnace:
+acquire_iron:
+build_hoe:
+make_bread:
+bake_cake:
+build_better_pickaxe:
+cook_fish:
+on_a_rail:
+build_sword:
+kill_enemy:
+kill_cow:
+fly_pig:
+snipe_skeleton:
+get_diamonds:
+nether_portal:
+ghast_return:
+get_blaze_rod:
+brew_potion:
+end_portal:
+the_end:
+enchantments:
+overkill:
+bookcase:
+explore_all_biomes:
+spawn_wither:
+kill_wither:
+full_beacon:
+breed_cow:
+diamonds_to_you:
+overpowered:
